@@ -33,7 +33,7 @@ const cartSlice = createSlice({
             const cartItem = state.cartItems.find(
                 (item) => item.id === action.payload
             );
-            if(cartItem) {
+            if(cartItem && cartItem.amount > 1) {
                 cartItem.amount -= 1;
             }
         },

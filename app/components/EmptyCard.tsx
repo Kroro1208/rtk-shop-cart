@@ -21,7 +21,7 @@ const EmptyCard = () => {
             </header>
         </section>
     </div>
-  )
+  );
 }
 
 export default EmptyCard

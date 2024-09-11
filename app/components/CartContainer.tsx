@@ -15,9 +15,8 @@ export const CartContainer = () => {
     }));
 
     if(amount < 1) {
-        return (
-            <EmptyCard />
-    )}
+        return <EmptyCard />
+    }
 
     return (
         <div className='container mx-auto p-4'>
