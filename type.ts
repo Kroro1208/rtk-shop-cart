@@ -7,3 +7,9 @@ export interface CartItem {
     img: StaticImageData;
     amount: number;
 }
+
+export interface CartState {
+    cartItems: CartItem[];
+    amount: number;
+    total: number;
+}
