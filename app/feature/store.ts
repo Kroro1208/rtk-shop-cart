@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./CartSlice"
+import modalSlice from "../modal/ModalSlice"
 
 export const store = configureStore({
     reducer: {
-        cart: cartReducer
+        // これによりcartSliceで定義したすべてのreducersが、ストアに登録される
+        cart: cartReducer,
+        modal: modalSlice
     }
 });
 
