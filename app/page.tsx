@@ -7,7 +7,7 @@ import { caluculateTotal } from "./feature/CartSlice";
 import type { RootState } from "./feature/store";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
-import { CartConteiner } from "./components/CartConteiner";
+import { CartContainer } from "./components/CartContainer";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export default function Home() {
     <main>
       { isOpen && <Modal />}
       <Navbar />
-      <CartConteiner />
+      <CartContainer />
     </main>
   );
 }

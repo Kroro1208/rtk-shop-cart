@@ -2,15 +2,12 @@
 import { useDispatch } from "react-redux"
 import type { RootState } from '../feature/store';
 import { useSelector } from "react-redux";
-import emptyCartImage from "../../public/happy.gif"
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { openModal } from "../modal/ModalSlice";
 import { CartItem } from "./CartItem";
+import EmptyCard from "./EmptyCard";
 
-export const CartConteiner = () => {
+export const CartContainer = () => {
     const dispatch = useDispatch();
-    const router = useRouter();
     const { amount, total, cartItems } = useSelector((state: RootState) => ({
         amount: state.cart.amount,
         cartItems: state.cart.cartItems,
@@ -19,19 +16,7 @@ export const CartConteiner = () => {
 
     if(amount < 1) {
         return (
-            <section className='flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center'>
-            <header>
-                <Image src={emptyCartImage} alt="Empty Cart" className="w-40 h-40 mb-4 mx-auto" />
-                <h2 className='text-4xl font-bold text-gray-800 mb-2'>Your Cart is Empty</h2>
-                <h4 className='text-lg text-gray-600 mb-6'>Looks like you have not added anything to your cart yet</h4>
-                <button
-                    type="button"
-                    onClick={() => router.push('/')}
-                    className='px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300'>
-                    Start Shopping
-                </button>
-            </header>
-        </section>
+            <EmptyCard />
     )}
 
     return (
